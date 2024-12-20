@@ -1,6 +1,4 @@
-import { Navbar } from "@/components/navbar";
 import { BookingForm } from "@/components/booking-form";
-import { StarryBackground } from "@/components/starry-background";
 
 export default function BookPage() {
   return (

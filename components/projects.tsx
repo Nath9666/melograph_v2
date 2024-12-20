@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from "next/image"
 
 const projects = [
   {
@@ -30,7 +31,7 @@ export function Projects() {
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <img
+              <Image
                 alt={project.title}
                 className="aspect-video w-full rounded-lg object-cover"
                 height="200"
