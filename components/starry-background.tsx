@@ -28,7 +28,7 @@ export function StarryBackground() {
       'rgba(255, 140, 0, 1)',
       'rgba(255, 110, 0, 1)',
     ];
-    const stars: { x: number; y: number; radius: number; vx: number; vy: number, color:any }[] = []
+    const stars: { x: number; y: number; radius: number; vx: number; vy: number, color: string }[] = []
 
     for (let i = 0; i < numStars; i++) {
       stars.push({
@@ -42,6 +42,8 @@ export function StarryBackground() {
     }
 
     function animate() {
+      if (!ctx) return
+      if (!canvas) return
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       stars.forEach(star => {
