@@ -34,3 +34,32 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## UserStory
+
+En tant que client :
+
+- je veux pouvoir voir les différentes creations de Mel afin d'observer ces compétences
+- je veux pouvoir parcourir les différents themes
+- je veux pouvoir faire des commandes afin d'avoir mon dessein
+- je veux pouvoir prendre rendez vous pour definir ma commandes
+- je veux pouvoir voir les retour des autres clients
+- voir le nombre de commandes et suivi de commandes
+
+En tant que Mel:
+
+- gestionnaires de suivi de commandes
+- gerer mon agenda en fonction des rendez vous (lier à l'enga google)
+
+En tant que Cyril:
+
+- je veux pouvoir editer un devis
+- voir le nombre de personnes, voir les cookies ( le chemin d'un utilisateurs)
+
+## Devis tamplates
+
+- Nom de mel
+- logo de l'entreprise
+- siret
+- conditions de ventes
+- signatures 2 le client et mel
