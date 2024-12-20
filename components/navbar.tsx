@@ -10,6 +10,7 @@ import {
   SheetContent,
   SheetHeader,
   SheetTrigger,
+  SheetTitle,
 } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Image from "next/image";
@@ -34,12 +35,12 @@ export function Navbar() {
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetHeader className="hidden md:flex md:items-center md:gap-8">
-            <VisuallyHidden>
-              <p>Menu</p>
-            </VisuallyHidden>
-          </SheetHeader>
           <SheetContent side="left" className="bg-gray-950 text-gray-50">
+            <SheetHeader>
+              <VisuallyHidden>
+                <SheetTitle>Menu</SheetTitle>
+              </VisuallyHidden>
+            </SheetHeader>
             <nav className="flex flex-col gap-4">
               <Link href="/portfolio" className="text-lg hover:text-blue-400">
                 Portfolio
