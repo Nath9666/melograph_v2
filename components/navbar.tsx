@@ -16,19 +16,23 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Image from "next/image";
 
 export function Navbar() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const closeSheet = () => setIsOpen(false);
+
   return (
-    <header className="p-4 sticky top-0 z-50 w-full border-b border-blue-900/10 bg-gray-950/0.5 backdrop-blur">
+    <header className="p-4 sticky top-0 z-50 w-full border-b border-blue-900/10 bg-gray-950/80 backdrop-blur">
       <div className="flex justify-between items-center h-16">
         <Link href="/" className="flex items-center">
           <Image
             src="/image/Logo_alpha.png"
             alt="Logo"
-            width={2160}
-            height={1620}
-            className="w-32 rounded-md mt-3"
+            width="2160"
+            height="1620"
+            className="w-32 rounded-md mt-4"
           />
         </Link>
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-6 w-6" />
@@ -42,16 +46,16 @@ export function Navbar() {
               </VisuallyHidden>
             </SheetHeader>
             <nav className="flex flex-col gap-4 p-4">
-              <Link href="/portfolio" className="text-lg hover:text-blue-400">
+              <Link href="/portfolio" className="text-lg hover:text-blue-400" onClick={closeSheet}>
                 Portfolio
               </Link>
-              <Link href="/services" className="text-lg hover:text-blue-400">
+              <Link href="/services" className="text-lg hover:text-blue-400" onClick={closeSheet}>
                 Services
               </Link>
-              <Link href="/contact" className="text-lg hover:text-blue-400">
+              <Link href="/contact" className="text-lg hover:text-blue-400" onClick={closeSheet}>
                 Contact
               </Link>
-              <Link href="/book" className="text-lg hover:text-blue-400">
+              <Link href="/book" className="text-lg hover:text-blue-400" onClick={closeSheet}>
                 Book a Session
               </Link>
             </nav>
