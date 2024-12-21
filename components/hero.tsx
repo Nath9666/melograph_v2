@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 export function Hero() {
   return (
     <section className=" flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center gap-4 text-center">
-      <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+      <h1 className="text-4xl font-custom tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
         Graphic &{" "}
         <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
           Digital Art

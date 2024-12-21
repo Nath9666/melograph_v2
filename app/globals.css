@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif, 'Amsterline';
 }
 
 @layer base {
@@ -60,6 +60,13 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+}
+
+@font-face {
+  font-family: 'Amsterline';
+  font-style: regular;
+  font-weight: normal;
+  src: url('/public/fonts/amsterline/Amsterline.ttf') format('ttf');
 }
 
 @layer base {
