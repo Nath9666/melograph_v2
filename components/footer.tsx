@@ -53,8 +53,8 @@ export function Footer() {
       <Image
         src="/image/Logo_alpha.png"
         alt="Logo"
-        width={100}
-        height={100}
+        width={2160}
+        height={1620}
         className="sm:w-1/4 w-1/3 rounded-md m-4"
       />
       <p>2023-{Year}</p>
