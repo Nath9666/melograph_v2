@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import React, { useRef } from 'react';
 import { addDays, format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 
@@ -31,6 +31,14 @@ import { Textarea } from "@/components/ui/textarea";
 
 export function BookingForm() {
   const [date, setDate] = React.useState<Date>();
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleInput = () => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  };
 
   return (
     <Card className="mx-auto max-w-lg bg-gray-900 border-blue-900/20">
@@ -94,9 +102,12 @@ export function BookingForm() {
           className="bg-gray-950 border-blue-900/20 text-gray-50"
         />
         <Textarea
-          placeholder="Brief description of your project"
-          className="bg-gray-950 border-blue-900/20 text-gray-50"
-        />
+        ref={textareaRef}
+        placeholder="Brief description of your project"
+        className="bg-gray-950 border-blue-900/20 text-gray-50 w-full resize-none overflow-hidden"
+        rows={4}
+        onInput={handleInput}
+      />
         <Button className="w-full bg-blue-600 hover:bg-blue-700">
           Book Consultation
         </Button>

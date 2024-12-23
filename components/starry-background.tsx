@@ -15,7 +15,9 @@ export function StarryBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    const numStars = 200
+    const random = (min: number, max: number) => Math.random() * (max - min) + min
+
+    const numStars = random(200,1000) * (canvas.width * canvas.height) / (1920 * 1080)
     const colors = [
       'rgba(255, 255, 60, 1)',
       'rgba(255, 255, 45, 1)',

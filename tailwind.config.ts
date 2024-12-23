@@ -57,7 +57,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        custom: ['Amsterline', 'sans-serif'],
+        "custom": ['Amsterline', 'sans-serif'],
       },
     },
   },

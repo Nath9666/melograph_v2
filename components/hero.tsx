@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
   return (
-    <section className=" flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center gap-4 text-center">
-      <h1 className="text-4xl font-custom tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+    <section className="flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center gap-4 text-center">
+      <h1 className="lg:text-9xl font-custom tracking-tighter md:text-8xl text-7xl">
         Graphic &{" "}
         <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
           Digital Art
@@ -14,7 +14,7 @@ export function Hero() {
         Bringing your ideas to life through stunning visuals and creative designs.
         Let&apos;s create something extraordinary together.
       </p>
-      <div className="flex gap-4">
+      <div className="flex gap-4 flex-col sm:flex-row">
         <Link href="#portfolio">
           <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
             View Portfolio

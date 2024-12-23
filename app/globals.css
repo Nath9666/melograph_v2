@@ -64,9 +64,7 @@ body {
 
 @font-face {
   font-family: 'Amsterline';
-  font-style: regular;
-  font-weight: normal;
-  src: url('/public/fonts/amsterline/Amsterline.ttf') format('ttf');
+  src: url('../public/fonts/amsterline/Amsterline.ttf') format('woff');
 }
 
 @layer base {
