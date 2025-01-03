@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
-
+import { useTranslation } from "next-i18next";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -14,8 +14,10 @@ import {
 } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Image from "next/image";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 export function Navbar() {
+  const { t } = useTranslation("common");
   const [isOpen, setIsOpen] = React.useState(false);
 
   const closeSheet = () => setIsOpen(false);
@@ -27,11 +29,12 @@ export function Navbar() {
           <Image
             src="/image/Logo_alpha.png"
             alt="Logo"
-            width="2160"
-            height="1620"
-            className="w-32 rounded-md mt-4"
+            width={100}
+            height={100}
+            className="w-16 h-16 rounded-md"
           />
         </Link>
+        <LanguageSwitcher />
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="md:hidden">
@@ -46,33 +49,49 @@ export function Navbar() {
               </VisuallyHidden>
             </SheetHeader>
             <nav className="flex flex-col gap-4 p-4">
-              <Link href="/portfolio" className="text-lg hover:text-blue-400" onClick={closeSheet}>
-                Portfolio
+              <Link
+                href="/portfolio"
+                className="text-lg hover:text-blue-400"
+                onClick={closeSheet}
+              >
+                {t("portfolio")}
               </Link>
-              <Link href="/services" className="text-lg hover:text-blue-400" onClick={closeSheet}>
-                Services
+              <Link
+                href="/services"
+                className="text-lg hover:text-blue-400"
+                onClick={closeSheet}
+              >
+                {t("services")}
               </Link>
-              <Link href="/contact" className="text-lg hover:text-blue-400" onClick={closeSheet}>
-                Contact
+              <Link
+                href="/contact"
+                className="text-lg hover:text-blue-400"
+                onClick={closeSheet}
+              >
+                {t("contact")}
               </Link>
-              <Link href="/book" className="text-lg hover:text-blue-400" onClick={closeSheet}>
-                Book a Session
+              <Link
+                href="/book"
+                className="text-lg hover:text-blue-400"
+                onClick={closeSheet}
+              >
+                {t("book")}
               </Link>
             </nav>
           </SheetContent>
         </Sheet>
         <nav className="hidden md:flex md:items-center md:gap-8">
           <Link href="/portfolio" className="text-sm hover:text-blue-400">
-            Portfolio
+            {t("portfolio")}
           </Link>
           <Link href="/services" className="text-sm hover:text-blue-400">
-            Services
+            {t("services")}
           </Link>
           <Link href="/contact" className="text-sm hover:text-blue-400">
-            Contact
+            {t("contact")}
           </Link>
           <Link href="/book" className="text-sm hover:text-blue-400">
-            Book a Session
+            {t("book")}
           </Link>
         </nav>
       </div>

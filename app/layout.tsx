@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { StarryBackground } from "@/components/starry-background";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { Analytics } from "@vercel/analytics/react";
+import ClientLayout from "./client-layout";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,19 +15,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "MeloGraph - Graphic & Digital Artist",
   description: "MeloGraph is a graphic and digital artist based in Paris.",
   robots: "page, follow",
-  viewport: "width=device-width, initial-scale=1",
   keywords: "graphic design, digital art, illustration, Paris",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="fr">
       <head>
@@ -44,9 +47,7 @@ export default function RootLayout({
       >
         <div className="min-h-screen bg-transparent text-gray-100">
           <StarryBackground />
-          <Navbar />
-          <main className="container mx-auto px-4 m-4">{children}</main>
-          <Footer />
+          <ClientLayout>{children}</ClientLayout>
         </div>
       </body>
     </html>
